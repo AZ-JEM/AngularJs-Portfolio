@@ -1,0 +1,87 @@
+* {
+  --dlgColor: rgba(32, 32, 32, 0.5);
+  --bgColor: #eee;
+  --txtColor: #eee;
+}
+
+body {
+  overflow: hidden;
+  background: var(--bgColor);
+}
+
+.bg {
+  position: absolute;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  opacity: calc(2/3);
+  z-index: -1;
+}
+
+main {
+  position: relative;
+  top: 50vh;
+  transform: translateY(-50%);
+}
+
+h1, h3 {
+  font-family: "Permanent Marker", cursive;
+  text-align: left;
+  color: var(--txtColor);
+}
+
+.navbar-inverse {
+  background: var(--dlgColor);
+  padding: 15px 15px 0px 15px;
+}
+
+/* navigation text and anchors */
+.navbar-inverse .navbar-text, p,
+.navbar-inverse .navbar-nav>li>a {
+  color: var(--txtColor);
+  font-size: 2.0rem;
+}
+
+#topic {
+  font-family: "Permanent Marker", cursive;
+  color: white;
+  font-size: 3.0rem;
+}
+
+/* p { color: var(--txtColor); } */
+
+.container {
+  background-color: var(--dlgColor);
+  border-radius: 15px;
+}
+
+.fragment.ng-enter {
+  animation-delay: 2.0s;
+  animation: 1.0s fragment-enter;
+}
+
+@keyframes fragment-enter {
+  from {
+    /* transform: translateX(100vw); */
+    opacity: 0;
+  }
+  to {
+    /* transform: translateX(0px); */
+    opacity: 1;
+  }
+}
+
+/* .fragment.ng-leave {
+animation: 1.0s fragment-leave;
+} */
+
+/* @keyframes fragment-leave {
+  from {
+    transform: translateX(50vw);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100vh);
+    opacity: 0;
+  }
+} */

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngPortfolio">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Permanent+Marker">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-links">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p id="topic" class="navbar-brand" uib-tooltip="Toggle canvas animation" tooltip-placement="bottom">AZ-JEM</p>
+          <p class="navbar-text">Fullstack student</p>
+        </div>
+        <!-- navigation links -->
+        <div class="collapse navbar-collapse" id="nav-links">
+          <ul class="nav navbar-nav navbar-right">
+            <!-- Angular ngRoute >= 1.6 (no history?) -->
+            <li id="a-home" class="active">
+              <a href="#!home" target="_self" uib-tooltip="Landing page" tooltip-placement="bottom">
+                Home
+              </a>
+            </li>
+            <li id="a-about">
+              <a href="#!about" target="_self" uib-tooltip="About me..." tooltip-placement="bottom">
+                About
+              </a>
+            </li>
+            <li id="a-contact">
+              <a href="#!contact" target="_self" uib-tooltip="Contact Information..." tooltip-placement="bottom">
+                Contact
+              </a>
+            </li>
+            <li id="a-FAQ">
+              <a href="#!FAQ" target="_self" uib-tooltip="Frequently asked questions..." tooltip-placement="bottom">
+                FAQ
+              </a>
+            </li>
+            <li id="a-gallery">
+              <a href="#!gallery" target="_self" uib-tooltip="Project gallery..." tooltip-placement="bottom">
+                Gallery
+              </a>
+            </li>
+            <li id="a-video">
+              <a href="#!video" target="_self" uib-tooltip="iFrame video demo..." tooltip-placement="bottom">
+                Video
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- html5 animated canvas -->
+    <canvas class="bg" id="canvas" width="700" height="700"></canvas>
+    <!-- content goes here -->
+
+    <main class="container">
+      <!-- <h3 id="fragment-name">?</h3> -->
+      <!-- <hr> -->
+      <div class="fragment" ng-view></div>
+    </main>
+
+    <!-- fixed footer -->
+    <footer>
+      <div class="container-fluid">
+        <a href="https://twitter.com/az_jem" class="twitter-follow-button" data-show-screen-name="false" data-size="large" data-show-count="false">Follow AZ-JEM</a>
+        <div id="copyright">
+          <p>&copy; AZ-JEM <span id="year"></span></p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+  <!-- Angular Js -->
+  <!-- no provision browser previous/next support? -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
+  <!-- Angular Js Bootstrap UI -->
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+  <!-- jQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- twitter action dependecies -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <!-- Angular Js application -->
+  <script src="scripts/app.js"></script>
+  <!-- html5 animated canvas -->
+  <script src="scripts/canvas.js"></script>
+  <!-- post current year in footer -->
+  <script>
+    var d = new Date;
+    $('#year').text(d.getFullYear());
+  </script>
+</html>
